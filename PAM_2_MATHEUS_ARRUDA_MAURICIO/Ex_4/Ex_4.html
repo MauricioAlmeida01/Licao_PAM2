@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>4) Descreva e crie exemplos com suas formas diferente eventos no javascript,segue alguns exemplo:</h1>
+
+    <b>onmouseover</b>
+    <br><br>
+    <p id="onmouse" onmouseover="MouseOver()" onblur="padrao()">Passe o cursor em cima</p>
+    <p>O evento "onmouseover" é ativado ao passar o mouse "por cima" de um elemento podendo fazer várias coisas com ele. Neste exemplo
+        ele muda a cor da fonte da frase para vermelho.
+    </p>
+
+    <script>
+        function MouseOver(){
+            id = document.getElementById("onmouse")
+            id.style.color = "red";
+        }
+    </script>
+
+    <b>onfocus e onblur</b>
+    <br><br>
+    <input type="text" id="input1" onfocus="infocus()" onblur="inblur()">
+    <p>O evento "onfocus" é ativado quando um formulário está selecionado,ou seja, quando estamos usando ele, clicamos, digitamos ou 
+        estamos exercendo alguma ação nele. Já o evento "onblur" ocorre quando 'saímos' desse formulário.</p>
+    <p>Esse se clicar dentro da caixa de texto muda a cor de fundo e se clicar fora da caixa muda para outra cor também</p>
+
+    <script>
+        function infocus(){
+            document.getElementById("input1").style.background = "green";
+        }
+        function inblur(){
+            document.getElementById("input1").style.background = "cyan";
+        }
+    </script>
+
+    <b>onchange</b>
+    <br><br>
+    <input id="change" onchange="inchange()">
+
+    <p></p>
+
+    <p>O evento "onchange" é utilizado nos chamados elementos de opção. Ou seja, o evento dispara uma ação quando uma mudança ocorre em algum elemento.
+        Após o usuário digitar um texto e apertar enter deixa o texto em maiiúsculo 
+    </p>
+
+    <script>
+        function inchange(){
+            change_event = document.getElementById("change")
+            change_event.value = (change_event.value).toUpperCase();
+        }
+    </script>
+
+    <b>onmousedown e onmouseup</b>
+    <br><br>
+    <button onmousedown="aperta()" onmouseup="solta()">Clica</button>
+    <div id="texto"></div>
+    <p>O evento onmousedown significa 'quando o mouse for pra baixo', ou seja, quando você é o evento que detecta
+         a ação de apertar o botão do mouse.Já o evento "onmouseup", significa 'quando o soltar o mouse', ou seja,
+          é um evento que detecta o ato de soltar o botão do mouse.
+    <p>Nesse exemplo se você clicar e segurar no botão mostra um texto abaixo e se você parar de segurar ele mostra outro texto.</p>
+
+    <script>
+        function aperta(){
+        var status=document.getElementById("texto");
+        status.innerHTML="Você apertou o botão do mouse";
+        }
+        function solta(){
+            var status=document.getElementById("texto");
+            status.innerHTML="Você soltou o botão do mouse";
+        }
+    </script>
+</body>
+</html>

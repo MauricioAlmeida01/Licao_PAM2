@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exemplos de função</title>
+    </head>
+    <body style="text-align: center;">
+        <p>Função Nomeada </p>
+        <button onclick="saudacao()" style="display: block; margin-left: auto; margin-right: auto; margin-top: 10px;">Clique</button>
+
+        <p>Função Nomeada com Parametro</p>
+        <button onclick="mostrarDobro(5)">Mostrar Dobro de 5</button>
+        
+        <p>Função construtora</p>
+        <div id="info"></div>
+
+        <p>Função Literal</p>
+        <button onclick="mostrarMensagem()">Mostrar</button>
+
+        <p>Função Arrow functions</p>
+        <button id="btn">Clique Aqui</button>
+
+        <script>
+            //Função nomeada
+            //Vc irá criar uma função nomeada quando vc quiser reutilizar ela em vários pontos do seu código.
+            function saudacao() {
+             alert("Olá! Esta é uma função de saudação.");
+            }
+            
+            //Função nomeada com parametro
+            //É a mesma coisa da nomeada mais com um parametro
+            function mostrarDobro(numero) {
+                var dobro = numero * 2;
+                alert("O dobro de "  + numero + " é " + dobro);
+            }
+
+            //Função Contrutora
+            // Uma função construtora em JavaScript é uma função que é usada para criar objetos. Ela é chamada com o operador new e geralmente é usada para inicializar novos objetos com propriedades específicas.
+            function Pessoa(nome, idade) {
+                this.nome = nome;
+                this.idade = idade;
+            }
+
+            var pessoa = new Pessoa("João", 30);
+            var infoDiv = document.getElementById("info"); // Exibindo as informações da pessoa na página HTML
+            infoDiv.innerHTML = "Nome: " + pessoa.nome + "<br>Idade: " + pessoa.idade;
+
+            //Função Literal(Váriavel)
+            var mostrarMensagem = function() {
+                alert("Esta é uma função literal!");
+            };
+
+            //Função Arrow functions
+            // As Arrow Functions são uma forma mais compacta de escrever funções em JavaScript, introduzidas no ECMAScript 6.
+            const exibirMensagem = () => {
+                alert("Você clicou no botão!");
+            };
+
+            document.getElementById("btn").addEventListener("click", exibirMensagem);
+
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .exemplos{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>3)  De exemplo dos seguintes formas de trabalhar com DOM(Document Object Model), e explique:</h1>
+    
+    <b>document.getElementById()</b>
+    <br><br>
+    <input type="text" id="nome">
+    <button onclick="clickid()">Ver</button>
+
+    <p>O "document.getElementById()" retorna o elemento cujo atributo ID foi especificado. Caso o elemento não exista ou o ID informado
+         seja incorreto ele retornará null. Mas nesse exemplo pegarei o conteúdo da caixa de texto e mostrarei
+        um alerta para o usuário com o texto que ele escreveu, se apertar o botão acima.</p>
+
+    <script>
+        function clickid(){
+            textoId = document.getElementById("nome");
+            window.alert(textoId.value);
+        }
+    </script>
+    <br><br>    
+    <br><br>
+    
+    <b>document.getElementsByTagName()</b>
+
+    <br><br>
+    <button onclick="clickTag()">Mostra quantos elementos "p" tem no site</button>
+
+    <p>O "document.getElementByTagName()" retorna uma coleção de objetos através das tags html. Nesse
+        exemplo mostra quantos elementos "p" tem no documento.</p>
+
+    <script>
+        function clickTag(){
+            p = document.getElementsByTagName("p");
+            num_paragrafos = p.length;
+            window.alert("Tem " + num_paragrafos + " elementos p do html no site.");
+        }
+    </script>
+    <br><br>    
+    <br><br>
+
+    <b class="classes">document.getElementsByClassName()</b>
+    <br><br>
+    <button class="classes" onclick="clickClass()">Ver a quantidade</button>
+
+    <p class="classes">O "document.getElementsByClassName()" retorna um vetor de objetos com todos os elementos
+        filhos que possuem o nome da classe dada. Se clicar no botão vai mostrar quantos elementos html
+        com a classe "classes" tem no documento.
+    </p>
+
+    <script>
+        function clickClass(){
+            /*elementos = document.getElementsByClassName("classes");*/
+            alert("No documento tem " + document.getElementsByClassName("classes").length + " elementos HTML com a classe 'classes'");
+        }
+    </script>
+    <br><br>    
+    <br><br>
+
+    <b class="exemplos">document.querySelector()</b>
+    <br><br>
+    <button onclick="clickQSelect()">Clique e veja o console</button>
+
+    <p class="exemplos">O "document.querySelector()" busca elementos no DOM com base num seletor CSS.
+        Neste exemplo se clicar no botão, depois clicar com o botão direito do mouse, for em "inspecionar"
+        e for na parte console verá o primeiro elemento que tem a classe exemplos, sendo que tem dois 
+        (marcados em azul).
+    </p>
+
+    <script>
+        function clickQSelect(){
+            console.log(document.body.querySelector(".exemplos"));
+        }
+    </script>
+    <br><br>    
+    <br><br>
+
+
+    <b>document.querySelectorAll();</b>
+    <br><br>
+    <button onclick="clickQSelectAll()">Clique e veja o console</button>
+
+    <p>O "document.querySelectorAll()" Retorna uma lista de elementos presentes no documento
+        (usando ordenação em profundidade, pré-ordenada e transversal dos nós do documento) que coincidam com
+        o grupo de seletores especificado. Se o usuário clicar no botão mostrará todos elementos paragrafos ("p") do HTML 
+        e também elementos com a classe ("exemplos") no console.
+    </p>
+    
+    <p>Dica: para ir no console clique com o botão direito, vá em "Inspecionar" e depois clique na aba Console para ver o resultado</p>
+
+    <script>
+        function clickQSelectAll(){
+            elementList = document.querySelectorAll("p, .exemplos");
+            console.log(elementList);
+        }
+    </script>
+    <br><br>    
+    <br><br>
+
+
+</body>
+</html>
